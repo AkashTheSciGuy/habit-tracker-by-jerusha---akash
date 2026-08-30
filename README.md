@@ -1,4 +1,4 @@
-# Habit Tracker
+# Habit Tracker - https://habit-tracker-by-a-j.netlify.app/
 
 A simple, modern habit-tracking web application built as a collaborative
 project by Akash V and Jerusha Jutike.
