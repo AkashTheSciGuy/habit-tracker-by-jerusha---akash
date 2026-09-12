@@ -313,3 +313,318 @@
 </body>
 
 </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Habit Tracker</title>
+
+    <h1>Habit Tracker</h1>
+    <p class="app-subtitle">Small steps. Better habits.</p>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         AUTH SCREEN
+    ================================== -->
+
+    <section id="authScreen" class="auth-screen">
+
+        <div class="auth-card">
+
+            <div class="auth-icon">
+                ✓
+            </div>
+
+
+            <h1 id="authTitle">
+                Welcome Back
+            </h1>
+
+
+            <p id="authSubtitle">
+                Sign in to continue tracking your habits.
+            </p>
+
+
+            <form id="authForm">
+
+                <input type="email" id="emailInput" placeholder="Email" autocomplete="email" required>
+
+
+                <input type="password" id="passwordInput" placeholder="Password" autocomplete="current-password"
+                    required>
+
+
+                <button type="submit" id="authSubmitBtn">
+                    Log In
+                </button>
+
+            </form>
+
+
+            <p id="authMessage" class="auth-message"></p>
+
+            <div id="verificationNotice" class="verification-notice hidden">
+
+                <div class="verification-icon">
+                    ✉
+                </div>
+
+                <h2>
+                    Check your email
+                </h2>
+
+                <p>
+                    We sent a verification link to
+                    <strong id="verificationEmail"></strong>
+                </p>
+
+                <p class="verification-help">
+                    Please verify your email address before logging in.
+                </p>
+
+                <button type="button" id="verificationLoginBtn" class="verification-login-button">
+                    I've verified my email
+                </button>
+
+                <button type="button" id="resendVerificationBtn" class="resend-button">
+                    Resend verification email
+                </button>
+
+            </div>
+
+
+            <button type="button" id="forgotPasswordBtn" class="auth-secondary-button">
+                Forgot Password?
+            </button>
+
+
+            <button type="button" id="authToggleBtn" class="auth-toggle">
+                Don't have an account? Sign Up
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         MAIN APP
+    ================================== -->
+
+    <section id="appScreen" class="app-screen hidden">
+
+        <div class="container">
+
+
+            <div class="top-bar">
+
+                <button id="themeToggle" class="theme-toggle" type="button">
+                    <span id="themeIcon">☾</span>
+                    <span id="themeText">Dark</span>
+                </button>
+
+                <button id="logoutBtn" class="logout-button">
+                    Log Out
+                </button>
+
+            </div>
+
+
+            <div class="add-habit">
+
+                <input type="text" id="habitInput" placeholder="Enter a habit..." maxlength="45">
+
+
+                <button id="addHabitBtn">
+                    Add Habit
+                </button>
+
+            </div>
+
+
+            <div id="habitList">
+                <!-- Habits created using JavaScript -->
+            </div>
+
+        </div>
+
+        <!-- =================================
+             HABIT DETAILS DASHBOARD
+        ================================== -->
+
+        <section id="habitDetails" class="habit-details hidden">
+
+            <div class="details-container">
+
+                <button id="closeDetailsBtn" class="details-back-button">
+                    ← Back to Habits
+                </button>
+
+                <div class="details-header">
+
+                    <p class="details-label">
+                        HABIT DETAILS
+                    </p>
+
+                    <h1 id="detailsHabitName">
+                        Habit
+                    </h1>
+
+                    <p class="details-subtitle">
+                        Your progress and history
+                    </p>
+
+                </div>
+
+
+                <!-- STATISTICS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <span class="stat-label">
+                            THIS YEAR
+                        </span>
+
+                        <strong id="yearProgress">
+                            0 / 365
+                        </strong>
+
+                        <span class="stat-description">
+                            completed days
+                        </span>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <span class="stat-label">
+                            THIS MONTH
+                        </span>
+
+                        <strong id="monthProgress">
+                            0 / 31
+                        </strong>
+
+                        <span class="stat-description">
+                            completed days
+                        </span>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <span class="stat-label">
+                            THIS WEEK
+                        </span>
+
+                        <strong id="weekProgress">
+                            0 / 7
+                        </strong>
+
+                        <span class="stat-description">
+                            completed days
+                        </span>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <span class="stat-label">
+                            CURRENT STREAK
+                        </span>
+
+                        <strong id="detailsCurrentStreak">
+                            0 days
+                        </strong>
+
+                        <span class="stat-description">
+                            consecutive days
+                        </span>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <span class="stat-label">
+                            BEST STREAK
+                        </span>
+
+                        <strong id="detailsBestStreak">
+                            0 days
+                        </strong>
+
+                        <span class="stat-description">
+                            personal best
+                        </span>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <span class="stat-label">
+                            COMPLETION RATE
+                        </span>
+
+                        <strong id="completionRate">
+                            0%
+                        </strong>
+
+                        <span class="stat-description">
+                            this year
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <!-- CALENDAR -->
+
+                <div class="calendar-section">
+
+                    <div class="calendar-year-heading">
+                        <span id="calendarYear">
+                            2026
+                        </span>
+                    </div>
+
+                    <div id="calendarGrid">
+                        <!-- Calendars generated by JavaScript -->
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+
+    <!-- =================================
+         SUPABASE
+    ================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- =================================
+         APPLICATION
+    ================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
