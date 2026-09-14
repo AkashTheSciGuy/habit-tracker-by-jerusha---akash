@@ -1827,37 +1827,22 @@ function createHabitCard(
 
 
     if (
-        habit.completedDates.includes(
-            today
+    habit.completedDates.includes(
+        today
+    )
+) {
+
+    completeButton.classList.add(
+        "completed"
+    );
+
+    completeButton
+        .querySelector(
+            ".button-text"
         )
-    ) {
-
-        completeButton.classList.add(
-            "completed"
-        );
-
-        completeButton.classList.remove(
-            "just-completed"
-        );
-
-        /*
-            Force the browser to recognize a fresh
-            animation even if this element had the
-            class previously.
-        */
-        void completeButton.offsetWidth;
-
-        completeButton.classList.add(
-            "just-completed"
-        );
-
-        completeButton
-            .querySelector(
-                ".button-text"
-            )
-            .textContent =
-            "COMPLETED ✓";
-    }
+        .textContent =
+        "COMPLETED ✓";
+}
 
 
     /* =====================================
